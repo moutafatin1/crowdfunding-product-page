@@ -5,7 +5,7 @@ import { MenuButton } from "./MenuButton";
 import { MobileMenu } from "./MobileMenu";
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const open = () => {
     setIsOpen(true);
   };
