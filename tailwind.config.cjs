@@ -3,6 +3,10 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "hero-mobile": "url(/src/assets/images/image-hero-mobile.jpg)",
+        "hero-desktop": "url(/src/assets/images/image-hero-desktop.jpg)",
+      },
       fontFamily: {
         commissioner: ["Commissioner", "sans-serif"],
       },

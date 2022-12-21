@@ -1,5 +1,9 @@
+import { Header } from "./components/Header";
+
 const App = () => {
-  return <div className="text-center text-7xl text-purple-500">App</div>;
+  return <>
+  <Header/>
+  </>
 };
 
 export default App;
