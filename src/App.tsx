@@ -1,9 +1,13 @@
+import { BackProjectCard } from "./components/Header/BackProjectCard";
 import { Header } from "./components/Header/Header";
 
 const App = () => {
-  return <>
-  <Header/>
-  </>
+  return (
+    <>
+      <Header />
+      <BackProjectCard />
+    </>
+  );
 };
 
 export default App;
