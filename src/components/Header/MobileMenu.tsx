@@ -1,6 +1,6 @@
 export const MobileMenu = () => {
   return (
-    <div className="absolute inset-0 bg-black/60">
+    <div className="absolute inset-0 z-10 bg-black/60">
       <ul className="fixed inset-x-6 top-20 rounded-lg bg-white">
         <li>
           <a
