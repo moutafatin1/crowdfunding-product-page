@@ -1,7 +1,8 @@
 export const MobileMenu = () => {
   return (
-    <div className="absolute inset-0 z-10 bg-black/60 lg:hidden">
-      <ul className="fixed inset-x-6 top-20 rounded-lg bg-white">
+    <div className="lg:hidden">
+      <div className="fixed inset-0 z-10 bg-black/60 "></div>
+      <ul className="relative  top-20 z-10 rounded-lg bg-white">
         <li>
           <a
             href="#"
