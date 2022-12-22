@@ -13,8 +13,10 @@ export const Header = () => {
     setIsOpen(false);
   };
   return (
-    <header className="h-72  bg-hero-mobile bg-cover bg-no-repeat p-6">
-      <div className="mx-auto flex max-w-6xl items-center justify-between">
+    <header className="h-72 bg-hero-mobile bg-contain bg-fixed bg-no-repeat p-6 lg:bg-hero-desktop">
+      {/* overlay */}
+      <div className="absolute inset-x-0 top-0  h-24 bg-gradient-to-b from-black/40 to-transparent"></div>
+      <div className="z-10 mx-auto flex max-w-6xl items-center justify-between lg:relative">
         <img src={Logo} alt="logo" />
         <ul className="hidden items-center gap-6 text-white lg:flex">
           <li>

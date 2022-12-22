@@ -12,14 +12,14 @@ export const MenuButton = ({ isOpen, open, close }: MenuButtonProps) => {
       {isOpen ? (
         <button
           onClick={close}
-          className="z-20 rounded-lg p-1 transition-opacity hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-crowd-moderateCyan lg:hidden"
+          className="z-30 rounded-lg p-1 transition-opacity hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-crowd-moderateCyan lg:hidden"
         >
           <img src={IconCloseMenu} alt="Menu Icon" />
         </button>
       ) : (
         <button
           onClick={open}
-          className="z-20 rounded-lg p-1 transition-opacity hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-crowd-moderateCyan lg:hidden"
+          className="z-30 rounded-lg p-1 transition-opacity hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-crowd-moderateCyan lg:hidden"
         >
           <img src={IconMenu} alt="Menu Icon" />
         </button>
