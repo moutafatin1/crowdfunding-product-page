@@ -1,11 +1,13 @@
 import { useState } from "react";
-import IconBookmark from "../../assets/images/icon-bookmark.svg";
 import LogoMasterCraft from "../../assets/images/logo-mastercraft.svg";
+import { fn } from "../../utils";
 import { Card } from "../common/Card";
 import { BackProjectModal } from "./BackProjectModal";
+import { IconBookmark } from "./IconBookmark";
 
 export const BackProjectCard = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(false);
   const openModal = () => {
     setModalIsOpen(true);
   };
@@ -29,14 +31,25 @@ export const BackProjectCard = () => {
         <div className="flex items-center justify-center gap-4 lg:justify-around">
           <button
             onClick={openModal}
-            className="rounded-full bg-crowd-moderateCyan px-8 py-4 font-bold text-white transition-colors hover:bg-crowd-darkCyan lg:px-10"
+            className="group rounded-full bg-crowd-moderateCyan px-8 py-4 font-bold text-white transition-colors hover:bg-crowd-darkCyan lg:px-10"
           >
             Back this project
           </button>
-          <button className="flex items-center  transition-opacity hover:opacity-80 lg:rounded-full lg:bg-gray-200 ">
-            <img src={IconBookmark} alt="bookmark icon" />
-            <span className="hidden px-4 text-lg font-bold text-crowd-darkGray lg:inline">
-              Bookmark
+          <button
+            onClick={() => setIsBookmarked((old) => !old)}
+            className={fn(
+              "flex items-center  transition-opacity hover:opacity-80 lg:rounded-full lg:bg-gray-200"
+            )}
+          >
+            <IconBookmark isBookmarked={isBookmarked} />
+            <span
+              className={fn(
+                "hidden px-4 text-lg font-bold text-crowd-darkGray text-crowd-darkGray/70 transition-colors lg:inline",
+                isBookmarked &&
+                  "text-crowd-moderateCyan group-hover:text-crowd-darkCyan"
+              )}
+            >
+              {isBookmarked ? "Bookmarked" : "Bookmark"}
             </span>
           </button>
         </div>
