@@ -1,4 +1,4 @@
-import { Pledge } from "./data";
+import { Pledge } from "../../data";
 
 type PledgeCard = {
   pledge: Pledge;

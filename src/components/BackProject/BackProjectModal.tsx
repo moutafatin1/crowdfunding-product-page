@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CloseModalIcon from "../../assets/images/icon-close-modal.svg";
-import { pledges } from "./data";
+import { pledges } from "../../data";
 import { PledgeCard } from "./PledgeCard";
 
 type BackProjectModalProps = {
