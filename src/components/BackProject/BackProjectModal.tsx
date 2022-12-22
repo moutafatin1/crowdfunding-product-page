@@ -9,7 +9,6 @@ type BackProjectModalProps = {
 };
 export const BackProjectModal = ({ close }: BackProjectModalProps) => {
   const [selectedPledge, setSelectedPledge] = useState("");
-
   return (
     <div>
       <div className="fixed inset-0 z-10 h-full bg-black/60"></div>
@@ -30,6 +29,7 @@ export const BackProjectModal = ({ close }: BackProjectModalProps) => {
         <ul className="mt-6 space-y-4">
           {pledges.map((p) => (
             <PledgeCard
+              close={close}
               key={p.id}
               pledge={p}
               setSelectedPledge={(value) => setSelectedPledge(value)}
