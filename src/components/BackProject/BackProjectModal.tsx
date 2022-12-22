@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CloseModalIcon from "../../assets/images/icon-close-modal.svg";
 import { pledges } from "../../data";
+import { Card } from "../common/Card";
 import { PledgeCard } from "./PledgeCard";
 
 type BackProjectModalProps = {
@@ -10,8 +11,9 @@ export const BackProjectModal = ({ close }: BackProjectModalProps) => {
   const [selectedPledge, setSelectedPledge] = useState("");
 
   return (
-    <div className="absolute top-0 bg-black/60">
-      <div className="mx-6 my-6 mt-24 rounded-xl bg-white p-4">
+    <div>
+      <div className="fixed inset-0 z-10 h-full bg-black/60"></div>
+      <Card className="absolute  left-1/2 top-24 z-20 my-6 -translate-x-1/2 rounded-xl bg-white p-4">
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-bold text-gray-800">Back this project</h2>
           <button
@@ -35,7 +37,7 @@ export const BackProjectModal = ({ close }: BackProjectModalProps) => {
             />
           ))}
         </ul>
-      </div>
+      </Card>
     </div>
   );
 };

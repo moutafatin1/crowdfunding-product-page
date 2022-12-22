@@ -1,4 +1,5 @@
 import { Pledge } from "../../data";
+import { fn } from "../../utils";
 
 type PledgeCard = {
   pledge: Pledge;
@@ -12,27 +13,45 @@ export const PledgeCard = ({
   setSelectedPledge,
 }: PledgeCard) => {
   return (
-    <li className=" rounded-xl border border-gray-200">
+    <li
+      className={fn(
+        "rounded-xl border border-gray-200",
+        pledge.left === 0 && "opacity-60"
+      )}
+    >
       <span className="block space-y-4 p-6">
         <label className="flex items-center gap-4">
           <input
             onChange={(e) => setSelectedPledge(e.target.value)}
             type="radio"
             name="pledge"
+            disabled={pledge.left === 0}
             checked={selectedPledge === pledge.value}
             value={pledge.value}
             className="h-6 w-6 cursor-pointer text-crowd-moderateCyan transition-transform hover:scale-90 focus:ring-crowd-moderateCyan active:scale-100"
           />
-          <span className="text-lg font-bold">{pledge.title}</span>
+          <span className="flex flex-col">
+            <span className="text-lg font-bold">{pledge.title}</span>
+            {pledge.minAmount !== undefined && (
+              <span className={fn("text-crowd-moderateCyan")}>
+                Pledge ${pledge.minAmount} or more
+              </span>
+            )}
+          </span>
         </label>
+
         <p className="text-crowd-darkGray">{pledge.desc}</p>
-        <p className="text-crowd-darkGray">
-          <span className="text-lg font-bold text-gray-900">{pledge.left}</span>{" "}
-          left
-        </p>
+        {pledge.left !== undefined && (
+          <p className="text-crowd-darkGray">
+            <span className="text-lg font-bold text-gray-900">
+              {pledge.left}
+            </span>{" "}
+            left
+          </p>
+        )}
       </span>
       {selectedPledge === pledge.value && (
-        <span className="flex flex-col items-center gap-4 border-t p-6">
+        <span className="flex flex-col  items-center gap-4 border-t p-6 lg:flex-row lg:justify-between">
           <p className="text-crowd-darkGray">Enter your pledge</p>
           <form className="flex  items-center gap-8">
             <div className="relative">
