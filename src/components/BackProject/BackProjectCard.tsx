@@ -13,7 +13,7 @@ export const BackProjectCard = () => {
   };
   return (
     <div>
-      <div className="relative -top-24 -z-0 mx-6 space-y-4 rounded-xl border border-gray-100 bg-white p-6 text-center ">
+      <div className="absolute top-1/4 -z-0  mx-6 space-y-4 rounded-xl border border-gray-100 bg-white p-6 text-center">
         <img
           src={LogoMasterCraft}
           alt="logo master craft"
